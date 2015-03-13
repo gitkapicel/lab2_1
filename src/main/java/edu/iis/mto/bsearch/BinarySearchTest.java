@@ -4,8 +4,11 @@ import static org.junit.Assert.*;
 
 import java.util.Random;
 
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.hamcrest.Matcher;
+import static org.hamcrest.CoreMatchers.*;
 
 public class BinarySearchTest {
 	
@@ -22,7 +25,7 @@ public class BinarySearchTest {
 		int key =56;
 		seq[0] =key;
 		SearchResult searchResult = BinarySearch.search(key, seq);
-		assertTrue(searchResult.isFound());
+		assertThat(true, is(searchResult.isFound()));
 		
 		
 	}
@@ -33,7 +36,7 @@ public class BinarySearchTest {
 		int key =56;
 		//seq[0] =key;
 		SearchResult searchResult = BinarySearch.search(key, seq);
-		assertFalse(searchResult.isFound());
+		assertThat(false, is(searchResult.isFound()));
 		
 		
 	}
@@ -44,7 +47,7 @@ public class BinarySearchTest {
 		int[] seq = new int[] {2,3,4,7,10,56};
 		
 		SearchResult searchResult = BinarySearch.search(2, seq);
-		assertEquals(1,searchResult.getPosition());
+		assertThat(1, is(searchResult.getPosition()));
 		
 		
 	}
@@ -55,7 +58,7 @@ public class BinarySearchTest {
 		int[] seq = new int[] {2,3,4,7,10,56};
 		
 		SearchResult searchResult = BinarySearch.search(56, seq);
-		assertEquals(6,searchResult.getPosition());
+		assertThat(6, is(searchResult.getPosition()));
 		
 		
 	}
@@ -68,7 +71,7 @@ public class BinarySearchTest {
 		
 		
 		SearchResult searchResult = BinarySearch.search(4, seq);
-		assertEquals(pos,searchResult.getPosition());
+		assertThat(pos, is(searchResult.getPosition()));
 		
 		
 	}
@@ -81,7 +84,7 @@ public class BinarySearchTest {
 		
 		
 		SearchResult searchResult = BinarySearch.search(4, seq);
-		assertEquals(pos,searchResult.getPosition());
+		assertThat(pos, is(searchResult.getPosition()));
 		
 		
 	}
@@ -92,7 +95,7 @@ public class BinarySearchTest {
 		
 		
 		SearchResult searchResult = BinarySearch.search(20, seq);
-		assertFalse(searchResult.isFound());
+		assertThat(false, is(searchResult.isFound()));
 		
 		
 	}
