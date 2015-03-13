@@ -60,6 +60,43 @@ public class BinarySearchTest {
 		
 	}
 	
+	
+	@Test
+	public void IsMidleInSekq() {
+		int[] seq = new int[] {2,3,4,7,10,56};
+		int pos = seq.length/2;
+		
+		
+		SearchResult searchResult = BinarySearch.search(4, seq);
+		assertEquals(pos,searchResult.getPosition());
+		
+		
+	}
+
+	
+	@Test
+	public void IsMidle2InSekq() {
+		int[] seq = new int[] {2,3,4,7,10};
+		int pos = seq.length/2+1;
+		
+		
+		SearchResult searchResult = BinarySearch.search(4, seq);
+		assertEquals(pos,searchResult.getPosition());
+		
+		
+	}
+	
+	@Test
+	public void IsNotInSekqMoreThenOne() {
+		int[] seq = new int[] {2,3,4,7,10};
+		
+		
+		SearchResult searchResult = BinarySearch.search(20, seq);
+		assertFalse(searchResult.isFound());
+		
+		
+	}
+
 
 
 	
