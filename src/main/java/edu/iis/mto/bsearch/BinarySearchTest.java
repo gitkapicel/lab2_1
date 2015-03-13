@@ -2,6 +2,8 @@ package edu.iis.mto.bsearch;
 
 import static org.junit.Assert.*;
 
+import java.util.Random;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -36,6 +38,16 @@ public class BinarySearchTest {
 		
 	}
 	
+	
+	@Test
+	public void IsFirstInSekq() {
+		int[] seq = new int[] {2,3,4,7,10,56};
+		
+		SearchResult searchResult = BinarySearch.search(2, seq);
+		assertEquals(1,searchResult.getPosition());
+		
+		
+	}
 	
 
 
