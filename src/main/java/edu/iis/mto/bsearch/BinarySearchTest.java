@@ -9,13 +9,13 @@ public class BinarySearchTest {
 	
 	@BeforeClass
 	public static void setUpBefforeClass() throws Exception{
-	BinarySearchTest serchTest = new BinarySearchTest();
+	
 	}
 	
 	
 	
 	@Test
-	public void IsInSekw() {
+	public void IsInSekq() {
 		int[] seq = new int[1];
 		int key =56;
 		seq[0] =key;
@@ -23,8 +23,22 @@ public class BinarySearchTest {
 		assertTrue(searchResult.isFound());
 		
 		
-		
-
 	}
+	
+	@Test
+	public void IsNotInSekq() {
+		int[] seq = new int[1];
+		int key =56;
+		//seq[0] =key;
+		SearchResult searchResult = BinarySearch.search(key, seq);
+		assertFalse(searchResult.isFound());
+		
+		
+	}
+	
+	
 
+
+	
+	
 }
