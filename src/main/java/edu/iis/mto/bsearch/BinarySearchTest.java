@@ -49,6 +49,17 @@ public class BinarySearchTest {
 		
 	}
 	
+	
+	@Test
+	public void IsLastInSekq() {
+		int[] seq = new int[] {2,3,4,7,10,56};
+		
+		SearchResult searchResult = BinarySearch.search(56, seq);
+		assertEquals(6,searchResult.getPosition());
+		
+		
+	}
+	
 
 
 	
