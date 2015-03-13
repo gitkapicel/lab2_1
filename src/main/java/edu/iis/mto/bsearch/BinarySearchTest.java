@@ -101,6 +101,20 @@ public class BinarySearchTest {
 	}
 
 
+	@Test(expected = IllegalArgumentException.class)
+	public void seqIsEqNull()
+	{
+	 int[] seq = new int[0];
+	 BinarySearch.search(1, seq);
+	}
+	
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void seqIsNotSorted()
+	{
+	 int[] seq = {6,4,8,3,2,8};
+	 BinarySearch.search(1, seq);
+	}
 
 	
 	
